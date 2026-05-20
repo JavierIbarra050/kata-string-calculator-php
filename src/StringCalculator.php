@@ -12,10 +12,12 @@ class StringCalculator
 
         $numbersList = explode(',', $numbers);
 
-        $firstNumber = (int) $numbersList[0];
-        $secondNumber = (int) $numbersList[1];
+        $sum = 0;
 
-        $sum = $firstNumber + $secondNumber;
+        foreach ($numbersList as $number) {
+            $sum += (int) $number;
+        }
+
         return $sum;
     }
 }

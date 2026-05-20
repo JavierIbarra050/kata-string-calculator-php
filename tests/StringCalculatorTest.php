@@ -60,11 +60,11 @@ final class StringCalculatorTest extends TestCase
     /**
      * @test
      */
-    public function givenThreeNumbersReturnSumOfThem()
+    public function givenAnyAmountOfNumbersReturnSumOfThem()
     {
         $calculadora = new StringCalculator();
 
-        $resultado = $calculadora->add('1,2,3');
+        $resultado = $calculadora->add('1,1,1,1,1,1');
 
         $this->assertEquals(6, $resultado);
     }
