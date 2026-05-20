@@ -8,7 +8,9 @@ class StringCalculator
     {
         if(!$numbers) return 0;
 
-        if(!str_contains($numbers, ',')) return (int) $numbers;
+        if(!str_contains($numbers, ',') && !str_contains($numbers, '\n')) return (int) $numbers;
+
+        if(str_contains($numbers, '\n')) $numbers = str_replace('\n', ',', $numbers);
 
         $numbersList = explode(',', $numbers);
 
