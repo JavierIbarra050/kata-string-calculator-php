@@ -8,6 +8,9 @@ class StringCalculator
     {
         if(!$numbers) return 0;
 
-        return (int) $numbers;
+        if(!str_contains($numbers, ',')) return (int) $numbers;
+
+        $numbersList = explode(',', $numbers);
+        return ($numbersList[1]);
     }
 }
