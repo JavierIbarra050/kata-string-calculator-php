@@ -44,4 +44,16 @@ final class StringCalculatorTest extends TestCase
 
         $this->assertEquals(0, $resultado);
     }
+
+    /**
+     * @test
+     */
+    public function givenTwoNumbersReturnsLastNumber()
+    {
+        $calculadora = new StringCalculator();
+
+        $resultado = $calculadora->add('1,2');
+
+        $this->assertEquals(2, $resultado);
+    }
 }
