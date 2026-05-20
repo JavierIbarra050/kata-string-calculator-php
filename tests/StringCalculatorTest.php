@@ -24,7 +24,7 @@ final class StringCalculatorTest extends TestCase
     /**
      * @test
      */
-    public function givenAnyNumberReturnsThatNumber()
+    public function givenAnySingleNumberReturnsThatNumber()
     {
         $calculadora = new StringCalculator();
 
