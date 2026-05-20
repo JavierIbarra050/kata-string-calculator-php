@@ -84,18 +84,6 @@ final class StringCalculatorTest extends TestCase
     /**
      * @test
      */
-    public function givenTwoNumbersWithADelimitadorReturnsLastNumber()
-    {
-        $calculadora = new StringCalculator();
-
-        $resultado = $calculadora->add('//;\n1;1');
-
-        $this->assertEquals(1, $resultado);
-    }
-
-    /**
-     * @test
-     */
     public function givenTwoNumbersWithADelimitadorReturnsSum()
     {
         $calculadora = new StringCalculator();
