@@ -24,18 +24,6 @@ final class StringCalculatorTest extends TestCase
     /**
      * @test
      */
-    public function givenNumberOneReturnsNumberOne()
-    {
-        $calculadora = new StringCalculator();
-
-        $resultado = $calculadora->add('1');
-
-        $this->assertEquals(1, $resultado);
-    }
-
-    /**
-     * @test
-     */
     public function givenAnyNumberReturnsThatNumber()
     {
         $calculadora = new StringCalculator();
