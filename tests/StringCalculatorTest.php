@@ -32,4 +32,16 @@ final class StringCalculatorTest extends TestCase
 
         $this->assertEquals(1, $resultado);
     }
+
+    /**
+     * @test
+     */
+    public function givenAnyNumberReturnsThatNumber()
+    {
+        $calculadora = new StringCalculator();
+
+        $resultado = $calculadora->add('2');
+
+        $this->assertEquals(2, $resultado);
+    }
 }
