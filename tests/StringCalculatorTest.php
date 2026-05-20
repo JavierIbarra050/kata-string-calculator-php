@@ -68,4 +68,16 @@ final class StringCalculatorTest extends TestCase
 
         $this->assertEquals(6, $resultado);
     }
+
+    /**
+     * @test
+     */
+    public function givenTwoNumbersWithJumpLineBetweenReturnsSumOfNumbers()
+    {
+        $calculadora = new StringCalculator();
+
+        $resultado = $calculadora->add('1\n1');
+
+        $this->assertEquals(2, $resultado);
+    }
 }
