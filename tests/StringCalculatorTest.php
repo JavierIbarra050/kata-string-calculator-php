@@ -32,4 +32,16 @@ final class StringCalculatorTest extends TestCase
 
         $this->assertEquals(2, $resultado);
     }
+
+    /**
+     * @test
+     */
+    public function givenNotNumericalArgumentReturns0()
+    {
+        $calculadora = new StringCalculator();
+
+        $resultado = $calculadora->add('NotNumericalValue');
+
+        $this->assertEquals(0, $resultado);
+    }
 }
