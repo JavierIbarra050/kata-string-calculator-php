@@ -92,4 +92,16 @@ final class StringCalculatorTest extends TestCase
 
         $this->assertEquals(2, $resultado);
     }
+
+    /**
+     * @test
+     */
+    public function givenAnyAmountOfNumbersWithADelimitadorReturnsSum()
+    {
+        $calculadora = new StringCalculator();
+
+        $resultado = $calculadora->add('//;\n1;1;1;1');
+
+        $this->assertEquals(4, $resultado);
+    }
 }
