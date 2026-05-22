@@ -116,4 +116,16 @@ final class StringCalculatorTest extends TestCase
 
         $this->assertEquals(2, $resultado);
     }
+
+    /**
+     * @test
+     */
+    public function givenStringWithDelimitadorMultipleReturnsSum()
+    {
+        $calculadora = new StringCalculator();
+
+        $resultado = $calculadora->add('//[***]\n1***2***3');
+
+        $this->assertEquals(6, $resultado);
+    }
 }
