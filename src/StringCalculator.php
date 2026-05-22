@@ -28,19 +28,19 @@ class StringCalculator
                 }
             }
 
-            if(!empty($negativos)) {
-                $respuesta = "Negativos no soportados, ";
+            if(empty($negativos)) return $sum;
 
-                for($i = 0; $i < count($negativos); $i++){
-                    $respuesta .= $negativos[$i];
+            $respuesta = "Negativos no soportados, ";
 
-                    if($i != count($negativos) - 1){
-                        $respuesta .= ', ';
-                    }
+            for($i = 0; $i < count($negativos); $i++){
+                $respuesta .= $negativos[$i];
+
+                if($i != count($negativos) - 1){
+                    $respuesta .= ',';
                 }
-                return $respuesta;
             }
-            return $sum;
+
+            return $respuesta;
         }
 
         if(str_contains($numbers, '\n')) $numbers = str_replace('\n', ',', $numbers);
@@ -57,19 +57,18 @@ class StringCalculator
             }
         }
 
-        if(!empty($negativos)) {
-            $respuesta = "Negativos no soportados, ";
+        if(empty($negativos)) return $sum;
 
-            for($i = 0; $i < count($negativos); $i++){
-                $respuesta .= $negativos[$i];
+        $respuesta = "Negativos no soportados, ";
 
-                if($i != count($negativos) - 1){
-                    $respuesta .= ',';
-                }
+        for($i = 0; $i < count($negativos); $i++){
+            $respuesta .= $negativos[$i];
+
+            if($i != count($negativos) - 1){
+                $respuesta .= ',';
             }
-
-            return $respuesta;
         }
-        return $sum;
+
+        return $respuesta;
     }
 }
