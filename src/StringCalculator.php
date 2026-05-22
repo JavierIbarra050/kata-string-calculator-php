@@ -19,12 +19,26 @@ class StringCalculator
             $numbersList = explode($delimitador, $numbers);
 
             $sum = 0;
+            $negativos = [];
             foreach($numbersList as $number){
                 if(str_contains($number, '-')){
-                    return "Negativos no soportados, " . $number;
+                    $negativos[] = $number;
                 } else {
                     $sum += (int) $number;
                 }
+            }
+
+            if(!empty($negativos)) {
+                $respuesta = "Negativos no soportados, ";
+
+                for($i = 0; $i < count($negativos); $i++){
+                    $respuesta .= $negativos[$i];
+
+                    if($i != count($negativos) - 1){
+                        $respuesta .= ', ';
+                    }
+                }
+                return $respuesta;
             }
             return $sum;
         }
@@ -34,12 +48,27 @@ class StringCalculator
         $numbersList = explode(',', $numbers);
 
         $sum = 0;
+        $negativos = [];
         foreach($numbersList as $number){
             if(str_contains($number, '-')){
-                return "Negativos no soportados, " . $number;
+                $negativos[] = $number;
             } else {
                 $sum += (int) $number;
             }
+        }
+
+        if(!empty($negativos)) {
+            $respuesta = "Negativos no soportados, ";
+
+            for($i = 0; $i < count($negativos); $i++){
+                $respuesta .= $negativos[$i];
+
+                if($i != count($negativos) - 1){
+                    $respuesta .= ',';
+                }
+            }
+
+            return $respuesta;
         }
         return $sum;
     }
