@@ -24,7 +24,7 @@ class StringCalculator
                 if(str_contains($number, '-')){
                     $negativos[] = $number;
                 } else {
-                    if($number < 1000) $sum += (int) $number;
+                    if((int) $number < 1000) $sum += (int) $number;
                 }
             }
 
@@ -53,7 +53,7 @@ class StringCalculator
             if(str_contains($number, '-')){
                 $negativos[] = $number;
             } else {
-                if($number < 1000) $sum += (int) $number;
+                if((int) $number < 1000) $sum += (int) $number;
             }
         }
 
