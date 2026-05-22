@@ -13,8 +13,10 @@ class StringCalculator
         if(str_contains($numbers, '//')){
             $numbers = str_replace('//', '', $numbers);
 
-            if(str_contains($numbers, '[')) $numbers = str_replace('[', '', $numbers);
-            if(str_contains($numbers, ']')) $numbers = str_replace(']', '', $numbers);
+            if(str_contains($numbers, '[') && str_contains($numbers, ']')){
+                $numbers = str_replace('[', '', $numbers);
+                $numbers = str_replace(']', '', $numbers);
+            }
 
             $delimitador = explode('\n', $numbers)[0];
 
