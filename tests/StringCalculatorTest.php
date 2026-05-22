@@ -104,4 +104,16 @@ final class StringCalculatorTest extends TestCase
 
         $this->assertEquals("Negativos no soportados, " . -1, $resultado);
     }
+
+    /**
+     * @test
+     */
+    public function givenStringWithMultipleNegativeNumberReturnsErrorAndNumbers()
+    {
+        $calculadora = new StringCalculator();
+
+        $resultado = $calculadora->add('1,-1,-1');
+
+        $this->assertEquals("Negativos no soportados, " . -1 . ",". -1 , $resultado);
+    }
 }
