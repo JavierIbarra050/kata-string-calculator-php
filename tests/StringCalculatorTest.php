@@ -102,6 +102,6 @@ final class StringCalculatorTest extends TestCase
 
         $resultado = $calculadora->add('1,-1,1');
 
-        $this->assertEquals("negativos no soportados, " . -1, $resultado);
+        $this->assertEquals("Negativos no soportados, " . -1, $resultado);
     }
 }

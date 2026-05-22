@@ -4,7 +4,7 @@ namespace Deg540\StringCalculatorPHP;
 
 class StringCalculator
 {
-    public function add(string $numbers): int
+    public function add(string $numbers): int | string
     {
         if(!$numbers) return 0;
 
@@ -20,9 +20,12 @@ class StringCalculator
 
             $sum = 0;
             foreach($numbersList as $number){
-                $sum += (int) $number;
+                if(str_contains($number, '-')){
+                    return "Negativos no soportados, " . $number;
+                } else {
+                    $sum += (int) $number;
+                }
             }
-
             return $sum;
         }
 
@@ -31,11 +34,13 @@ class StringCalculator
         $numbersList = explode(',', $numbers);
 
         $sum = 0;
-
-        foreach ($numbersList as $number) {
-            $sum += (int) $number;
+        foreach($numbersList as $number){
+            if(str_contains($number, '-')){
+                return "Negativos no soportados, " . $number;
+            } else {
+                $sum += (int) $number;
+            }
         }
-
         return $sum;
     }
 }
