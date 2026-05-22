@@ -13,6 +13,53 @@ class StringCalculator
         if(str_contains($numbers, '//')){
             $numbers = str_replace('//', '', $numbers);
 
+            if(str_contains($numbers, '][')){
+                $delimitadores = [];
+                $componentesNumeros = explode(']', $numbers);
+
+                foreach($componentesNumeros as $componenteNumero){
+                    if(str_contains($componenteNumero, '[')){
+                        $componenteNumero = str_replace('[', '', $componenteNumero);
+                        $delimitadores[] = $componenteNumero;
+                    }
+                }
+
+                $numbers = str_replace('[', '', $numbers);
+                $numbers = str_replace(']', '', $numbers);
+
+                $numbers = explode('\n', $numbers)[1];
+
+                foreach($delimitadores as $delimitador){
+                    $numbers = str_replace($delimitador, ',', $numbers);
+                }
+
+                $numbersList = explode(',', $numbers);
+
+                $sum = 0;
+                $negativos = [];
+                foreach($numbersList as $number){
+                    if(str_contains($number, '-')){
+                        $negativos[] = $number;
+                    } else {
+                        if((int) $number < 1000) $sum += (int) $number;
+                    }
+                }
+
+                if(empty($negativos)) return $sum;
+
+                $respuesta = "Negativos no soportados, ";
+
+                for($i = 0; $i < count($negativos); $i++){
+                    $respuesta .= $negativos[$i];
+
+                    if($i != count($negativos) - 1){
+                        $respuesta .= ',';
+                    }
+                }
+
+                return $respuesta;
+            }
+
             if(str_contains($numbers, '[') && str_contains($numbers, ']')){
                 $numbers = str_replace('[', '', $numbers);
                 $numbers = str_replace(']', '', $numbers);
